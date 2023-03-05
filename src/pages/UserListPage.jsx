@@ -5,18 +5,18 @@ const UserList = () => {
  
     if(error) return <div>Error {error}</div>
 
-    useEffect(()=>{
-        async function callApi(){
-            setLoading(true)
-            console.log('llamando')
-            console.log(import.meta.env.VITE_BACKEND)
-            const request = await fetch(import.meta.env.VITE_BACKEND+'/user/')
-            const json = await request.json()
-            setUsers(json)
-            setLoading(false)
-        }
-        callApi()
-    },[])
+    // useEffect(()=>{
+    //     async function callApi(){
+    //         setLoading(true)
+    //         console.log('llamando')
+    //         console.log(import.meta.env.VITE_BACKEND)
+    //         const request = await fetch(import.meta.env.VITE_BACKEND+'/user/')
+    //         const json = await request.json()
+    //         setUsers(json)
+    //         setLoading(false)
+    //     }
+    //     callApi()
+    // },[])
 
     if(loading) return <div>Loading...</div>
     if(!users.length) return <div>'No hay usuarios'</div>
